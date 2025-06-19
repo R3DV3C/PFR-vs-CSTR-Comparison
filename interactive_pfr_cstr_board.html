@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activated Sludge: PFR vs CSTR Detailed Comparison</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #f4f7fa; color: #333; line-height: 1.6; }
+    header, footer { text-align: center; background: #2c3e50; color: #ecf0f1; padding: 20px; }
+    nav { display: flex; justify-content: center; background: #ecf0f1; }
+    .tab { padding: 12px 20px; cursor: pointer; font-weight: 600; color: #2c3e50; }
+    .tab.active { background: #fff; border-bottom: 3px solid #2c3e50; }
+    .content { display: none; max-width: 900px; margin: 30px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); padding: 30px; }
+    .content.active { display: block; }
+    .section { margin-bottom: 30px; }
+    .section h2 { margin-bottom: 15px; color: #2c3e50; }
+    .section p { margin-bottom: 12px; }
+    .section ul { list-style: disc; margin-left: 20px; margin-bottom: 12px; }
+    table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+    th, td { border: 1px solid #ccc; padding: 8px; }
+    th { background: #e8eef2; }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Activated Sludge Systems: PFR vs CSTR Comparison</h1>
+    <p>Sean Harold Anak Louis, 82934</p>
+  </header>
+
+  <nav>
+    <div class="tab active" data-target="intro">Introduction</div>
+    <div class="tab" data-target="pfr">Plug Flow Reactor (PFR)</div>
+    <div class="tab" data-target="cstr">Completely Mixed Reactor (CSTR)</div>
+    <div class="tab" data-target="comparison">Side-by-Side & Hybrid</div>
+  </nav>
+
+  <!-- Introduction -->
+  <div id="intro" class="content active">
+    <div class="section">
+      <h2>Secondary Treatment: Activated Sludge Overview</h2>
+      <p>Activated sludge is an aerobic suspended-growth process where return sludge (biomass) is "activated" by aeration in the reactor. It stabilizes organic content and removes nutrients (nitrogen, phosphorus).</p>
+      <ul>
+        <li><strong>Purposes:</strong> Biological stabilization of organics; nutrient removal.</li>
+        <li><strong>Process types:</strong> Suspended growth (aerobic, anaerobic), attached growth, combined systems.</li>
+        <li><strong>Variants:</strong> Conventional, extended aeration, SBR, oxidation ditch, step/tapered aeration.</li>
+      </ul>
+      <p>Two reactor configurations apply to activated sludge:</p>
+      <table>
+        <thead><tr><th>System</th><th>Type</th><th>Flow Mode</th></tr></thead>
+        <tbody>
+          <tr><td>Plug Flow</td><td>Long rectangular channel</td><td>Continuous, unidirectional</td></tr>
+          <tr><td>Completely Mixed</td><td>Basin with mixers or diffusers</td><td>Continuous mixing</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- PFR Section -->
+  <div id="pfr" class="content">
+    <div class="section">
+      <h2>1. Concept & Hydraulic Behavior</h2>
+      <p>In PFR-based activated sludge, mixed liquor flows through a long, narrow aeration channel. Biomass and substrate move as discrete plugs with negligible axial mixing, ensuring a gradient of microbial activity along the length.</p>
+      <p><strong>Equation:</strong> $$\frac{dC}{dx} = -\frac{k}{u}C \quad\Rightarrow\quad C(x)=C_0 e^{-k x/u}$$ where HRT <em>θ=L/u</em>.</p>
+    </div>
+    <div class="section">
+      <h2>2. Process Parameters</h2>
+      <table>
+        <thead><tr><th>Parameter</th><th>Design Role</th></tr></thead>
+        <tbody>
+          <tr><td>Mixed Liquor Suspended Solids (MLSS)</td><td>Biomass concentration; influences reaction rate.</td></tr>
+          <tr><td>Dissolved Oxygen (DO)</td><td>Maintain >2 mg/L for aerobic metabolism without backmixing.</td></tr>
+          <tr><td>Return Sludge Rate (RSR)</td><td>Controls biomass age and F/M ratio.</td></tr>
+          <tr><td>Flow Velocity (u)</td><td>Determines HRT and plug integrity.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <h2>3. Performance Indicators</h2>
+      <ul>
+        <li><strong>BOD Removal:</strong> >95% removal typical due to uniform aerobic conditions.</li>
+        <li><strong>Sludge Age:</strong> Controlled by RSR; affects nitrification in high-rate channels.</li>
+        <li><strong>Effluent Clarity:</strong> Enhanced by sequential substrate depletion.</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>4. Design Considerations</h2>
+      <ul>
+        <li>Baffle placement to prevent short-circuiting.</li>
+        <li>Control diffuser spacing and blower capacity for uniform DO.</li>
+        <li>Provision for sludge return line and wasting port.</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>5. Advantages & Disadvantages</h2>
+      <ul>
+        <li><strong>Advantages:</strong> Effective BOD removal; escalates nitrification in stages.</li>
+        <li><strong>Disadvantages:</strong> Complex channel layout; higher head loss; challenging control at low flows.</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>6. Applications</h2>
+      <ul>
+        <li>Conventional activated sludge with plug flow aeration basins.</li>
+        <li>Oxidation ditches (circular PFR variant).</li>
+        <li>Tapered aeration basins for variable BOD loading.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CSTR Section -->
+  <div id="cstr" class="content">
+    <div class="section">
+      <h2>1. Concept & Hydraulic Behavior</h2>
+      <p>In CSTR activated sludge, mixed liquor is uniformly mixed in a tank by mechanical aerators or diffused air. Effluent concentration equals mixed liquor concentration, simplifying control of biomass and DO.</p>
+      <p><strong>Mass balance:</strong> $$Q(C_0-C)=VkC \Rightarrow C=C_0/(1+kθ)$$ where θ=V/Q.</p>
+    </div>
+    <div class="section">
+      <h2>2. Process Parameters</h2>
+      <table>
+        <thead><tr><th>Parameter</th><th>Design Role</th></tr></thead>
+        <tbody>
+          <tr><td>MLSS</td><td>Target 2000–4000 mg/L for conventional plants.</td></tr>
+          <tr><td>Sludge Volume Index (SVI)</td><td>Indicator of settleability in final clarifier.</td></tr>
+          <tr><td>F/M Ratio</td><td>Balanced by sludge wasting to maintain biomass age.</td></tr>
+          <tr><td>Aeration Rate</td><td>Matches oxygen demand of mixed liquor.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <h2>3. Performance Indicators</h2>
+      <ul>
+        <li><strong>Effluent BOD:</strong> Typically 20–30 mg/L for conventional activated sludge.</li>
+        <li><strong>Settleability:</strong> Measured by SVI, crucial for clarifier performance.</li>
+        <li><strong>Process Stability:</strong> Robust to load fluctuations due to mixing.</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>4. Design Considerations</h2>
+      <ul>
+        <li>Tank geometry: circular or rectangular with adequate depth (3–5 m).</li>
+        <li>Mixing intensity: prevent dead zones, but avoid shear damage to flocs.</li>
+        <li>Sludge recycle/pumping: control for return activated sludge (RAS) and waste activated sludge (WAS).</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>5. Advantages & Disadvantages</h2>
+      <ul>
+        <li><strong>Advantages:</strong> Simple to operate, easy sampling, tolerant to influent swings.</li>
+        <li><strong>Disadvantages:</strong> Larger reactor volume, less efficient nitrification gradient, potential short-circuit if mixing uneven.</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>6. Applications</h2>
+      <ul>
+        <li>Conventional activated sludge basins in municipal WWTPs.</li>
+        <li>Extended aeration plants (longer HRT in CSTR configuration).</li>
+        <li>SBR systems operate as batch CSTRs with timed exchange.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Comparison & Hybrid -->
+  <div id="comparison" class="content">
+    <div class="section">
+      <h2>Mathematical Comparison</h2>
+      <table>
+        <thead><tr><th>Metric</th><th>PFR</th><th>CSTR</th></tr></thead>
+        <tbody>
+          <tr><td>Effluent Conc.</td><td>C₀e<sup>-kθ</sup></td><td>C₀/(1+kθ)</td></tr>
+          <tr><td>Volume</td><td>V=Q(-1/k)ln(C/C₀)</td><td>V=Q[(C₀/C)-1]/k</td></tr>
+          <tr><td>Sensitivity</td><td>High</td><td>Low</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <h2>Selection Guidelines</h2>
+      <p><strong>PFR</strong>: Ideal when influent characteristics are stable, space is linear, and high nutrient removal is required in stages.</p>
+      <p><strong>CSTR</strong>: Preferred for variable loads, simplicity, and where mixer infrastructure exists.</p>
+    </div>
+    <div class="section">
+      <h2>Hybrid Configuration</h2>
+      <p>Use a CSTR (equalization basin) upstream to buffer influent, followed by a PFR polishing channel to maximize removal. This combination stabilizes flow/loads and delivers high effluent quality.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>KNS3233 Sem 2 24/25: Water and Wastewater Engineering</p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.target).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
